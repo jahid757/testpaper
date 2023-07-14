@@ -1,0 +1,341 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --main-color:#f7961d;
+}
+*{padding: 0;margin: 0;font-family: Arial, Helvetica, sans-serif;}
+h1,h2,h3,h4,h5,h6,p{
+    margin-bottom: 0;
+}
+img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+.heading_text{
+    font-size: 22px;
+    font-weight: bold;
+}
+.p-3{
+    padding: 10px !important;
+}
+.mobile-body {
+    width: 375px;
+    height: 667px;
+    display: inline-block;
+    border: 6px solid #333;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px rgba(33, 33, 33, .3);
+    margin: 50px auto;
+    display: block;
+    overflow-y: scroll;
+    position: relative;
+    background-color: #F4F8FB;
+}
+a.book,a.chapter{
+    text-decoration: none;
+    color: #000;
+}
+footer a{
+    text-decoration: none;
+}
+footer a.active{
+    color: green;
+}
+.no_scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.no_scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.book h5{
+    font-size: 17px;
+}
+.book p{
+    font-size: 14px;
+}
+.book img{
+    margin-bottom: 7px;
+}
+.book.card,.chapter{
+    box-shadow: 2px 4px 4px rgba(33, 33, 33, .3);
+    margin-bottom: 10px;
+}
+.chapter{
+    background-color:rgb(255 132 0 / 16%);
+}
+.pointer-event{
+    cursor: pointer;
+}
+.card{
+    border: none;
+}
+.faq h4 a,.faq h4{
+    font-size:16px;
+}
+.faq p{
+    font-size: 14px;
+}
+.faq:last-child p{
+    border-bottom: none !important;
+}
+.content-p{
+    display: none;
+}
+.text-active{
+    color:#0d6efd
+}
+.text-red-50{
+    color:#efb5b5
+}
+.single_input {
+    margin-top: 10px;
+    position: relative;
+}
+
+.single_input span.material-symbols-outlined {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666666;
+    height: 100%;
+    width: 30px;
+    background-color: #ECECEC;
+    border-radius: 5px 0 0 5px;
+    z-index: 11;
+    
+    padding-top: 8px;
+    padding-left: 4px;
+
+}
+.single_input input,
+.single_input select,
+.single_input textarea,
+span.select2.select2-container.select2-container--default.select2-container--focus {
+    width: 100%;
+    outline: none;
+    border: 1.5px solid #ececec;
+    padding: 7px;
+    border-radius: 5px;
+    padding-left: 35px;
+}
+
+.single_input textarea {
+    padding-left: 7px;
+}
+
+.single_input span.material-symbols-outlined::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 7px;
+}
+.primary_btn {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    color: #fff;
+    background-color: #f7961d;
+    padding: 7px ;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 17px;
+}
+#genderValue {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: absolute;
+    z-index: -1;
+}
+.gender a.primary_btn {
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    cursor: pointer;
+}
+.gender a.primary_btn.active {
+    background-color: var(--main-color);
+    color: #fff;
+}
+footer{
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1000;
+
+}
+footer p{
+    font-size: 12px;
+}
+.h-100{
+    min-height: 100%;
+    height: auto !important;
+}
+.chapter .material-symbols-outlined{
+    font-size: 65px;
+    
+}
+.star{
+    font-size: 22px !important;
+}
+.w-50{
+    width: 48% !important;
+}
+.card-design-3 .card{
+    width: 45%;
+    
+}
+.card-design-3 .card img{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px; 
+}
+.chapter-wrap .chapter:nth-child(odd) .material-symbols-outlined{
+    color: #2cb1ff;
+}
+.chapter-wrap  .material-symbols-outlined{
+    color: #f39e43;
+    
+}
+.chapter-wrap .chapter:nth-child(odd){
+    background-color: #c0f3ff;
+}
+.action {
+    position: sticky;
+    bottom: 80px;
+    padding-right: 7px;
+    align-items: end;
+}
+.action span.material-symbols-outlined{
+    background-color: #cdcdcd;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+.options> div{
+    padding: 10px;
+}
+.options .correct-ans{
+    background-color: #edffed;
+    border-radius: 5px;
+    color: #00cd00;
+}
+
+.options .wrong-ans{
+    background-color: #ffeded;
+    border-radius: 5px;
+    color: #cd0013;
+}
+/* .options .wrong-ans input:disabled{
+    color: rgb(255, 40, 40) !important;
+    border-color: red;
+} */
+.refresh{
+    background-color:#00cdb1;
+    width: fit-content;
+    border-radius: 5px;
+    margin: auto;
+    color: #fff;
+    cursor: pointer;
+}
+.book-2 img{
+    width: 50px !important;
+    margin-bottom: 0 !important;
+}
+.faq h4.active a{
+    color: #0d6efd;
+}
+.faq h4 a{
+    color: #000;
+}
+.faq span.material-symbols-outlined.active{
+    transition: .5s;
+    transform: rotate(180deg);
+}
+.exam .card img{
+    width: 50px;
+}
+.single-chart {
+    width: 33%;
+    justify-content: space-around ;
+  }
+  .circular-chart{
+    width: 40px;
+  }
+.circle-bg {
+    fill: none;
+    stroke: #e0ffe4;
+    stroke-width: 3.8;
+  }
+  .fon-40{
+    font-size: 40px;
+  }
+  .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    /* animation: progress 1s ease-out forwards; */
+    stroke: #41d130;
+  }
+  .percentage {
+    fill: #41d130;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+  }
+  .w-30{
+    width:30%
+}
+.profile_details h4{
+    font-size: 18px;
+}
+.profile_details p{
+    font-size: 14px;
+}
+.card .border-bottom:last-child{
+    border-bottom: none !important;
+}
+.card .toggler h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+@media (max-width: 667px) {
+    .mobile-body {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+        height: 100vh;
+        margin-bottom: 0;
+    }
+
+    footer {
+        position: fixed;
+        width: 100%
+    }
+
+    .h-100 {
+        margin-bottom: 75px;
+    }
+    .action {
+        position: fixed;
+        bottom: 80px;
+        right: 7px;
+        align-items: end;
+    }
+}
