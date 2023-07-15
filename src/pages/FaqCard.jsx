@@ -7,7 +7,7 @@ const FaqCard = () => {
     return (
         <div className="faq">
             <h4 className="d-flex align-items-center justify-content-between p-2">
-              <Link className="text-decoration-none" to="/ans"
+              <Link className="text-decoration-none" to="/exam"
                 >Lorem, ipsum dolor.</Link>
               <span onClick={toggleOpen} className="material-symbols-outlined pointer-event">
                 expand_more

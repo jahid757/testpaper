@@ -313,6 +313,17 @@ footer p{
     font-size: 20px;
     font-weight: 600;
 }
+.otp div{
+    justify-content: center;
+    gap:10px
+}
+.otp div input{
+    border-radius: 5px ;
+    border: 1px solid #ddd;
+    width: 30px !important;
+    outline: none;
+}
+
 @media (max-width: 667px) {
     .mobile-body {
         width: 100%;

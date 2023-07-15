@@ -1,14 +1,41 @@
-import React, {  } from 'react';
+import React, { useContext } from 'react';
 import Container from '../components/Container';
 import { Button } from '@material-tailwind/react';
+import { useForm } from 'react-hook-form';
+import { UserContext } from '../App';
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
     // const [name,setName] = useState('');
-
+    const [user, setUser] = useContext(UserContext)
+    const {
+        register,
+        handleSubmit,
+        // watch,
+        formState: { errors },
+      } = useForm()
+      const onSubmit = (data) => {
+        fetch('https://testpaper.xyz/api/login',{
+            method:"POST",
+            headers:{"Content-Type": "application/json"},
+            body:JSON.stringify(data)
+        }).then(response => response.json())
+        .then(response => {
+            setUser(response.userData)
+            setAuthKeyInLocal(response.access_token)
+        })
+        .catch(error => console.log('error', error));
+      }
+      const setAuthKeyInLocal = (key) => {
+        localStorage.setItem('key',key)
+    }
+    if (user) {
+        return <Navigate to="/" />;
+    }
     return (
         <Container>
             <div style={{minHeight:" 90% !important"}} className=" h-100 justify-content-center flex-column d-flex">
-            <form autoComplete="off" className="needs-validation card mt-3 container">
+            <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" className="needs-validation card mt-3 container py-2">
                
                 <h3 className="text-center heading_text">Login</h3>
             
@@ -16,7 +43,7 @@ const Login = () => {
                     <span className="material-symbols-outlined">
                         call
                         </span>
-                    <input autoComplete="off" type="tel" placeholder="Mobile" required className="form-control"/>
+                    <input {...register("mobile", { required: true })} autoComplete="off" type="tel" placeholder="Mobile" required className="form-control"/>
                 </div>
             
             
@@ -24,7 +51,7 @@ const Login = () => {
                     <span className="material-symbols-outlined">
                         lock
                         </span>
-                    <input autoComplete="off" type="password" placeholder="Password" required className="form-control"/>
+                    <input {...register("password", { required: true })} autoComplete="off" type="password" placeholder="Password" required className="form-control"/>
                 </div>
             
                 <div className="condition pt-2">
