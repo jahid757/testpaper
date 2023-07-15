@@ -14,6 +14,7 @@ import PrivateRoute from './components/PrivateRoute';
 import { fetchUserData } from './components/Call_API';
 import Faq from './pages/Faq';
 import NotFound from './pages/NotFound';
+import ProfileEdit from './pages/ProfileEdit';
 export const UserContext = createContext();
 function App() {
   // const user = {
@@ -38,14 +39,17 @@ function App() {
         <Route index path='/login' element={<Login/>}/>
         <Route  path='/Register' element={<Register/>}/>
         <Route path='/404' element={<Error404/>}/>
+
+
         <Route element={<PrivateRoute user={user} />}>
         <Route  index path='/' element={<Home/>}/>
-
         <Route path='/exam' element={<Exam/>}/>
         <Route path='/ans' element={<Ans/>}/>
         <Route path='/chapter' element={<Chapter/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/faq' element={<Faq/>}/>
+        <Route path='/profile-update' element={<ProfileEdit/>}/>
+
         </Route>
         <Route path="*" element={<NotFound/>} />
       </Routes>

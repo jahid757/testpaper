@@ -33,3 +33,15 @@ export const getAllChapter = async (key) => {
     const response = await req.json();
     return response.data;
   };
+
+export const getUserData = async (key) => {
+    const req = await fetch(`https://testpaper.xyz/api/profile`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${ key || userKey}`,
+      },
+    });
+    const response = await req.json();
+    return response.userData;
+  };
