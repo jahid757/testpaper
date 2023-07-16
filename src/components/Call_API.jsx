@@ -57,3 +57,16 @@ export const updatePassword = async (data) => {
   const response = await req.json();
   return response.message;
 };
+
+export const updateMobile = async (data) => {
+  const req = await fetch("https://testpaper.xyz/api/profile/mobile/update", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${userKey}`,
+    },
+    body: JSON.stringify(data),
+  });
+  const response = await req.json();
+  return response;
+};

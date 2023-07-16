@@ -51,8 +51,8 @@ const Profile = () => {
                     </Link>
                 </div>
                 <div className="toggler mb-2 border-bottom pt-2 px-2">
-                    <Link to='/' className="d-flex align-items-center justify-content-between pointer-event text-dark">
-                        <h4 className="h5">Change your info</h4>
+                    <Link to='/change-mobile' className="d-flex align-items-center justify-content-between pointer-event text-dark">
+                        <h4 className="h5">Change Mobile</h4>
                         <span className="material-symbols-outlined">
                             chevron_right
                             </span>

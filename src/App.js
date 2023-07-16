@@ -16,6 +16,7 @@ import Faq from './pages/Faq';
 import NotFound from './pages/NotFound';
 import ProfileEdit from './pages/ProfileEdit';
 import PasswordEdit from './pages/PasswordEdit';
+import MobileUpdate from './pages/MobileUpdate';
 export const UserContext = createContext();
 function App() {
   // const user = {
@@ -51,6 +52,7 @@ function App() {
         <Route path='/faq' element={<Faq/>}/>
         <Route path='/profile-update' element={<ProfileEdit/>}/>
         <Route path='/change-password' element={<PasswordEdit/>}/>
+        <Route path='/change-mobile' element={<MobileUpdate/>}/>
 
         </Route>
         <Route path="*" element={<NotFound/>} />
