@@ -15,6 +15,7 @@ import { fetchUserData } from './components/Call_API';
 import Faq from './pages/Faq';
 import NotFound from './pages/NotFound';
 import ProfileEdit from './pages/ProfileEdit';
+import PasswordEdit from './pages/PasswordEdit';
 export const UserContext = createContext();
 function App() {
   // const user = {
@@ -49,6 +50,7 @@ function App() {
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/faq' element={<Faq/>}/>
         <Route path='/profile-update' element={<ProfileEdit/>}/>
+        <Route path='/change-password' element={<PasswordEdit/>}/>
 
         </Route>
         <Route path="*" element={<NotFound/>} />

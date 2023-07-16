@@ -324,6 +324,11 @@ footer p{
     outline: none;
 }
 
+.swal2-popup.swal2-modal.swal2-icon-success.swal2-show{
+    max-width: 100%;
+    width: 350px;
+    margin-left: -17px;
+}
 @media (max-width: 667px) {
     .mobile-body {
         width: 100%;

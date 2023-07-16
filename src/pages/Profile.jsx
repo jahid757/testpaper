@@ -26,7 +26,7 @@ const Profile = () => {
                     <div>
                         <h4><strong>{userData.name}</strong></h4>
                         <p className="mb-0">{userData.mobile}</p>
-                        <p className="mb-0">{userData.gender}</p>
+                        <p className="mb-0 capitalize">{userData.gender}</p>
                         <p className="mb-0">Class {userData.classname_id}</p>
                     </div>
                 </div>
@@ -43,8 +43,8 @@ const Profile = () => {
                     </Link>
                 </div>
                 <div className="toggler mb-2 border-bottom pt-2 px-2">
-                    <Link to='/' className="d-flex align-items-center justify-content-between pointer-event text-dark">
-                        <h4 className="h5">Change your info</h4>
+                    <Link to='/change-password' className="d-flex align-items-center justify-content-between pointer-event text-dark">
+                        <h4 className="h5">Change Password</h4>
                         <span className="material-symbols-outlined">
                             chevron_right
                             </span>
