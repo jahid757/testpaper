@@ -5,10 +5,12 @@ import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
 import { updateMobile } from "../components/Call_API";
+import OtpInput from "../components/OtpInput";
 
 const MobileUpdate = () => {
   const [navigate, setNavigate] = useState(false);
-  
+  const [otpAllow,setOtpAllow] = useState(false)
+  const authKey = localStorage.getItem("key");
   const {
     register,
     handleSubmit,
@@ -18,6 +20,9 @@ const MobileUpdate = () => {
   const onSubmit = async (data) => {
     const res = await updateMobile(data);
     console.log(res);
+    if(res.verifyOtp){
+      setOtpAllow(true)
+    }
     // Swal.fire({
     //     icon: 'success',
     //     title: res,
@@ -26,6 +31,22 @@ const MobileUpdate = () => {
     //   })
     //   setNavigate(true)
   };
+
+  const [otp, setOtp] = useState('');
+
+  const verifyOtp = () => {
+    fetch('https://testpaper.xyz/api/otp-verify-code',{
+      method:'POST',
+      headers:{
+        "Content-Type": "application/json",
+        "Authorization":`Bearer ${authKey}`
+      },
+      body:JSON.stringify({verify_code:otp,})
+    }).then((res) => res.json()).then((data) => {
+      setNavigate(true)
+    })
+  }
+
   if (navigate) {
     return <Navigate to="/profile" />;
   }
@@ -33,7 +54,8 @@ const MobileUpdate = () => {
   return (
     <Container>
       <div className="h-100 flex-col justify-center flex">
-        <Card className="m-2">
+        {
+          otpAllow ? <OtpInput verifyOtp={verifyOtp} otp={otp} setOtp={setOtp}/> : <Card className="m-2">
           <CardBody>
             <form
               autoComplete="off"
@@ -62,6 +84,7 @@ const MobileUpdate = () => {
             </form>
           </CardBody>
         </Card>
+        }
       </div>
     </Container>
   );

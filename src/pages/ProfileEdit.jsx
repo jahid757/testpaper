@@ -25,7 +25,7 @@ const ProfileEdit = () => {
     useEffect(()=>{loadSubject()},[])
     const onSubmit = (data) => {
         const updatedData = {...data,gender}
-        // console.log(updatedData)
+        console.log(updatedData,JSON.stringify(updatedData))
         fetch('https://testpaper.xyz/api/profile/update',{
           method:'POST',
           headers:{

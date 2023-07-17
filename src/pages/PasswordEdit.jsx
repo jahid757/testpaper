@@ -15,6 +15,7 @@ const PasswordEdit = () => {
         formState: { errors },
       } = useForm()
       const onSubmit = async (data) => {
+        console.log(data)
         const res = await updatePassword(data);
         Swal.fire({
             icon: 'success',
