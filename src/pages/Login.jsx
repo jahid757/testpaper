@@ -3,7 +3,7 @@ import Container from '../components/Container';
 import { Button } from '@material-tailwind/react';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../App';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const Login = () => {
     // const [name,setName] = useState('');
@@ -57,7 +57,7 @@ const Login = () => {
                 <div className="condition pt-2">
                     <div className="d-sm-flex align-items-center justify-content-between">
                     <label className="d-flex align-items-sm-center gap-2" htmlFor="role"><input type="checkbox" name="role" id="role"/>Remember me</label>
-                        <label className="mt-0" htmlFor="login"><a href="/">Forget Password</a></label>
+                        <label className="mt-0" htmlFor="login"><Link to="/reset-password">Forget Password</Link></label>
                     </div>
                     <Button type="submit" className="primary_btn py-3">Login</Button>
                     <label className="mt-2 text-center d-block" htmlFor="login">Don't have an account? <a href="/register">Register</a></label>

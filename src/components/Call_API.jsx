@@ -70,3 +70,16 @@ export const updateMobile = async (data) => {
   const response = await req.json();
   return response;
 };
+
+
+export const resetPassword = async (data) => {
+  const req = await fetch("https://testpaper.xyz/api/reset-password", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data),
+  });
+  const response = await req.json();
+  return response;
+};

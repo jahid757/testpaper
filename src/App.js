@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound';
 import ProfileEdit from './pages/ProfileEdit';
 import PasswordEdit from './pages/PasswordEdit';
 import MobileUpdate from './pages/MobileUpdate';
+import ResetPassword from './pages/ResetPassword';
 export const UserContext = createContext();
 function App() {
   // const user = {
@@ -41,6 +42,7 @@ function App() {
         <Route index path='/login' element={<Login/>}/>
         <Route  path='/Register' element={<Register/>}/>
         <Route path='/404' element={<Error404/>}/>
+        <Route path='/reset-password' element={<ResetPassword/>}/>
 
 
         <Route element={<PrivateRoute user={user} />}>

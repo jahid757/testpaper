@@ -30,7 +30,6 @@ const Register = () => {
   const onSubmit = (data) => {
     const updatedData = {...data,gender,classname_id}
     setMobile(data.mobile)
-    // console.log(updatedData)
     fetch('https://testpaper.xyz/api/register',{
       method:'POST',
       headers:{

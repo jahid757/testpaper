@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../components/Container';
 import { getUserData } from '../components/Call_API';
-import { Button, Radio } from '@material-tailwind/react';
+import { Button, Card, Radio } from '@material-tailwind/react';
 import { useForm } from 'react-hook-form';
 import { Navigate } from 'react-router-dom';
 
@@ -48,7 +48,8 @@ const ProfileEdit = () => {
 
     return (
         <Container>
-            <div className="h-100">
+            <div className="h-100 flex justify-center flex-col">
+            <Card className={`m-2`}>
             <form
           autoComplete="off"
           className="needs-validation container py-2"
@@ -115,6 +116,7 @@ school
             <Button className="primary_btn py-3" type="submit">Update</Button>
           </div>
         </form>
+            </Card>
             </div>
         </Container>
     );
